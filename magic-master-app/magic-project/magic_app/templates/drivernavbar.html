@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{% static '../static/css/design.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+    <title>{% block title %} Wah {% endblock %}</title>
+  </head>
+  <body>
+
+    <!-- navbar -->
+    <section class="navbar">
+        <div class="brand-section">
+          <img src="../static/images/wizardlogo.png" alt="Brand Logo" class="brand-logo">
+        </div>
+        <h2 class="nav-title"> Wizard Lounge </h2>
+          <div class="nav-links">
+            <a href="{% url 'home' %}" class="btn" id="active"> Home </a>
+            <a href="{% url 'wizard-list' %}" class="btn"> Wizards </a>
+            <a href="{% url 'creature-list' %}" class="btn"> Creatures </a>
+            <a href="{% url 'place-list' %}" class="btn"> Enchanted Places </a>
+            <a href="{% url 'encounter-list' %}" class="btn"> Encounters </a>
+            <a href="{% url 'event-list' %}" class="btn"> Magical Events </a>
+          </div>
+      </section>
+
+    <!-- Main content of your webpage -->
+    <main>
+      {% block content %}
+
+      {% endblock %}
+    </main>
+
+    {% include 'includes/footer.html' %}
+    
+  </body>
+</html>

@@ -1,0 +1,66 @@
+{% extends 'drivernavbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
+    <title>Wizards!!!!</title>
+  </head>
+  <body>    
+    <main>
+      {% block content %}
+      <section class="container">
+        <h2> WIZARDS </h2>
+        <table class="styled-table">
+          <tbody>
+            <tr>
+                <th>Profile</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Magical Abilities</th>
+                <th>Birth Date</th>
+                <th>Magical Wand</th>
+            </tr>
+          {% for wizard in wizards %}
+            <tr>
+                {% if wizard.image %}
+                <td style="max-width: 75px;">
+                  <img src="{{ wizard.image.url }}" alt="can't load image" class="photo-size"
+                  style="max-width: 100%;">
+                </td>
+                {% else %}
+                <td style="max-width: 75px;">
+                  <img src="{% static 'images/default/image.jpg' %}" alt="No image available" class="photo-size" style="max-width: 80%;">
+                </td>
+                {% endif %}
+                <td>{{ wizard.name }}</td>
+                <td>{{ wizard.email }}</td>
+                <td>{{ wizard.magical_abilities }}</td>
+                <td>{{ wizard.birth_date }}</td>
+                <td>{{ wizard.magical_wand }}</td>
+            </tr>
+            {% empty %}
+          {% endfor %}
+          </tbody>
+        </table>
+      </section>  
+      <br><br><br>
+      <div>
+        {% block pagination %}
+          {% include 'includes/pagination.html' %}
+        {% endblock %}
+      </div>       
+      {% endblock %}
+    </main>
+  </body>
+</html> 
+

@@ -1,0 +1,295 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Garamond', 'Georgia';
+  }
+  
+  body::before {
+    content: "";
+    background-image: url("../images/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(5px); /* Adjust the blur value as needed */
+  }
+  
+  /* Rest of your existing body styles */
+  body {
+    /* background-color: #d3d3d3; */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  main {
+    padding-top: 60px;
+    padding-bottom: 60px; /* Adjust as needed */
+  }
+  
+  /*NAVBAR*/
+  .navbar {
+  background-color: rgba(141, 22, 168, 0.5);
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10px; 
+}
+
+.brand-section {
+  display: flex;
+  align-items: center;
+}
+
+.brand-logo {
+  width: 50px; /* Adjust width as needed */
+  height: auto; /* Ensures aspect ratio is maintained */
+  margin-right: 10px; /* Adjust spacing */
+}
+
+.brand-title {
+  margin: 0;
+  font-size: 24px; /* Adjust font size */
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin: 0 20px; /* Adjust spacing between links */
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px; /* Adjust padding as needed */
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+
+.navbar #active {
+    border-radius: 10px;
+    background-color: whitesmoke;
+    color: black;
+  }
+  
+.nav-title {
+  margin: 0;
+  font-size: 24px; /* Adjust font size */
+  color: white;
+}
+
+  /*FOOTER*/
+  footer {
+    position: fixed;
+    height: 15  vh;
+    width: 100%;
+    background-color: rgba(141, 22, 168, 0.5);
+    color: white;
+    bottom: 0;
+    text-align: center;
+  }
+
+  .brand-logo {
+    width: 50px; 
+  }
+
+  .brand-section {
+    display: flex;
+    align-items: center;
+  }
+  
+  .home-content {
+    min-height: 100vh;
+  }
+  
+/* CSS for styling h2 and a elements inside the .container section */
+
+.container h2 {
+  font-size: 50px;
+  color: #fff;
+  margin-bottom: 20px;
+  padding-left: 10%;
+  text-shadow: 2px 2px 9px rgba(90, 67, 242, 0.5); /* Example: Add a subtle text shadow */
+}
+
+.container a {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+  background-color: #ff8585;
+}
+
+.container a:hover {
+  background-color: #ffd1d1;
+}
+
+.styled-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.styled-table th,
+.styled-table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 12px;
+}
+
+.styled-table th {
+  background-color: rgb(103, 46, 132);
+  color: #fff;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: #977aa4;
+}
+
+.styled-table tbody tr:nth-child(odd) {
+  background-color: #9885d6;
+}
+
+.styled-table tbody tr:hover {
+  background-color: #9bbcc6;
+}
+  .btn-contaier {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .login-form-container {
+    position: absolute;
+    top: 90px; /* Adjust this value based on the height of your navbar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 500px;
+    background-image: url('../images/portal.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 180px;
+
+  }
+  
+  .home {
+    text-align: center;
+  }
+  
+  .login-title {
+    color: #fefefe;
+    font-weight: 500;
+    font-size: 70px;
+  }
+  
+  .login-instructions {
+    color: #898989;
+    font-size: 18px;
+    margin-bottom: 30px;
+  }
+  
+  .btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .login-btn {
+    display: inline-block;
+    background-color: #6444ce;
+    color: #fff;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  
+  .login-btn:hover {
+    background-color: #7656dc;
+    transform: scale(1.05);
+  }
+  
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .page-item {
+    margin-right: 5px;
+  }
+  
+  .page-link {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    border: 1px solid #ad00f7;
+    color: #c300ff;
+    background-color: #000000;
+  }
+  
+  .page-link:hover {
+    background-color: #1d1d1d;
+  }
+  
+  /* Adjusted selectors to accommodate classes with spaces */
+  .page-item.disabled {
+    /* Styles for disabled pagination item */
+    color: #6c757d;
+    pointer-events: none;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #dee2e6;
+  }
+  
+  .page-item.active {
+    /* Styles for active pagination item */
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    z-index: 3;
+  }
+  
+  /* Social Icons for footer */
+  
+  .social-icons a {
+    color: white;
+    text-decoration: none; 
+    /* Add other styling properties as needed */
+  }
+  
+  /* Hover effect for the links */
+  .social-icons a:hover {
+    color: #ffffff; /* Change color on hover if desired */
+    /* Add additional hover effects */
+  }

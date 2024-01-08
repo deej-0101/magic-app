@@ -1,0 +1,53 @@
+{% extends 'drivernavbar.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+
+    <title>Encounters!!!!</title>
+  </head>
+  <body>    
+    <main>
+      {% block content %}
+      <section class="container">
+        <h2> MAGICAL ENCOUNTERS </h2>
+        <table class="styled-table">
+          <tbody>
+            <tr>
+                <th>Event</th>
+                <th>Wizard</th>
+                <th>Creature</th>
+                <th>Outcome</th>
+            </tr>
+          {% for encounter in encounter %}
+            <tr>
+                <td>{{ encounter.event }}</td>
+                <td>{{ encounter.wizard }}</td>
+                <td>{{ encounter.creature }}</td>
+                <td>{{ encounter.outcome }}</td>
+            </tr>
+            {% empty %}
+          {% endfor %}
+          </tbody>
+        </table>
+      </section>  
+      <br><br><br>
+      <div>
+        {% block pagination %}
+          {% include 'includes/pagination.html' %}
+        {% endblock %}
+      </div>       
+      {% endblock %}
+    </main>
+  </body>
+</html> 
+

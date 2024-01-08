@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="{% static '../static/css/design.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>{% block title %} Hocus Pocus {% endblock %}</title>
+  </head>
+  <body>
+    <!--NAVBAR-->
+    <section class="navbar">
+      <div class="brand-section">
+        <img src="../static/images/wizardlogo.png" alt="Brand Logo" class="brand-logo">
+      </div>
+      <h2 class="nav-title"> Wizard Lounge </h2>
+        <div class="nav-links">
+          <a href="{% url 'home' %}" class="btn" id="active"> Home </a>
+          <a href="{% url 'wizard-list' %}" class="btn"> Wizards </a>
+          <a href="{% url 'creature-list' %}" class="btn"> Creatures </a>
+          <a href="{% url 'place-list' %}" class="btn"> Enchanted Places </a>
+          <a href="{% url 'encounter-list' %}" class="btn"> Encounters </a>
+          <a href="{% url 'event-list' %}" class="btn"> Magical Events </a>
+        </div>
+    </section>
+
+    <!--CONTENT-->
+    <main>
+      {% block content %}
+      <div class="login-form-container">
+        <div class="login-container">
+          <section class="home">
+            <h1 class="login-title">Greetings..</h1>
+            <p class="login-instructions">Enter to the Portal</p>
+            <div class="btn-container">
+              <a href="{% url 'admin:index' %}" class="login-btn">Portal</a>
+            </div>
+            {% comment %} <div class="btn-container">
+              <a href="{% url 'wizard-list' %}" class="login-btn">User Login</a>
+            </div> {% endcomment %}
+          </section>
+        </div>
+      </div>
+      {% endblock %}
+    </main>
+    <br><br><br><br><br><br>
+
+    {% include 'includes/footer.html' %}
+  </body>
+</html>
